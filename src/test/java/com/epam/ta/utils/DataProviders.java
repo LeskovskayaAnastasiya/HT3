@@ -11,9 +11,9 @@ public class DataProviders {
     public static Object[][] incorrectDataForLogin() {
         return new Object[][]{
                 // подаставляем граничное (дробное) значение сторонам
-                {"LeskovskayaAnastasiya","130588"},//incorrect password
-                {"LeskovskayaAnastasiy","130588mc"},//incorrect name
-                {"LeskovskayаAnаstаsiyа","130588mс"}//incorrect name  (The symbol "a"  is russian) and password (The symbol "c"  is russian)
+                {"anastasialeskovskaya1991","130588"},//incorrect password
+                {"anastasialeskovskaya1","130588mc"},//incorrect name
+                {"аnаstasialeskovskaya1991","130588mс"}//incorrect name  (The symbol "a"  is russian) and password (The symbol "c"  is russian)
         };
     }
 

@@ -11,7 +11,7 @@ package com.epam.ta;
 public class GitHubAutomationTest
 {
 	private Steps steps;
-	private final String USERNAME = "LeskovskayaAnastasiya";
+	private final String USERNAME = "anastasialeskovskaya1991";
 	private final String PASSWORD = "130588mc";
 	private final String ERROR_MESSAGE = "Incorrect username or password.";
 
