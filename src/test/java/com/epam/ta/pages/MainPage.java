@@ -22,6 +22,10 @@ public class MainPage extends AbstractPage
 	@FindBy(xpath = "//*[@id=\"dashboard\"]/div[1]/div/div[1]/h3/a")
 	private WebElement newRepoButton;
 
+	@FindBy(xpath = "//html/body/div[5]/div[1]/ul[1]/li[2]/a")
+	private WebElement termsLink;
+
+
 	public MainPage(WebDriver driver)
 	{
 		super(driver);
@@ -42,6 +46,11 @@ public class MainPage extends AbstractPage
 	public void clickOnNewRepoButton()
 	{
 		newRepoButton.click();
+	}
+
+	public void clickTermsLink()
+	{
+		termsLink.click();
 	}
 
 

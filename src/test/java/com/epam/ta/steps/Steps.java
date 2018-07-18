@@ -2,10 +2,12 @@ package com.epam.ta.steps;
 
 import com.epam.ta.driver.DriverSingleton;
 import com.epam.ta.pages.CreateNewRepositoryPage;
+import com.epam.ta.pages.GitHubHelpPage;
 import com.epam.ta.pages.LoginPage;
 import com.epam.ta.pages.MainPage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 
@@ -75,6 +77,15 @@ public class Steps
 	{
 		CreateNewRepositoryPage createNewRepositoryPage = new CreateNewRepositoryPage(driver);
 		return createNewRepositoryPage.isCurrentRepositoryEmpty();
+	}
+
+
+	public boolean checkGitHubHelpPage(String searchString)
+	{
+		MainPage mainPage = new MainPage(driver);
+		mainPage.clickTermsLink();
+		GitHubHelpPage gitHubHelpPage = new GitHubHelpPage(driver);
+		return gitHubHelpPage.checkGitHubHelpText(searchString);
 	}
 
 }

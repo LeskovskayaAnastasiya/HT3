@@ -62,6 +62,12 @@ public class GitHubAutomationTest
 		Assert.assertTrue(steps.createNewRepository("HT1", "auto-generated test repo", wayToCreateRepo));
 	}
 
+	@Test
+	public void checkGitHubHelpPage()
+	{
+		steps.loginGithub(USERNAME, PASSWORD);
+		Assert.assertTrue(steps.checkGitHubHelpPage("GitHub Help"));
+	}
 
 	@AfterMethod(description = "Stop Browser")
 	public void stopBrowser()
