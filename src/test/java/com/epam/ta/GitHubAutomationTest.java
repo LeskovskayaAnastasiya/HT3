@@ -53,7 +53,7 @@ public class GitHubAutomationTest
 		Assert.assertFalse(steps.createNewRepository(steps.generateFullNameRepo(USERNAME), "auto-generated test repo", wayToCreateRepo));
 	}
 
-	//	test3
+
 	//	 check massege error
 	@Test ( dataProviderClass = DataProviders.class,
 			dataProvider = "DataProviderForCreateRepo")
@@ -63,7 +63,7 @@ public class GitHubAutomationTest
 	}
 
 	@Test
-	public void checkGitHubHelpPage()
+	public void checkGitHubHelpTextPage()
 	{
 		steps.loginGithub(USERNAME, PASSWORD);
 		Assert.assertTrue(steps.checkGitHubHelpPage("GitHub Help"));

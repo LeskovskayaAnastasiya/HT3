@@ -9,7 +9,7 @@
                     <include name="oneCanLoginGithub"/>
                     <include name="CanCreateProject"/>
                     <include name="tryToCreateDublicateProject"/>
-                    <include name="checkGitHubHelpPage"/>
+                    <include name="checkGitHubHelpTextPage"/>
                 </methods>
             </class>
         </classes>
