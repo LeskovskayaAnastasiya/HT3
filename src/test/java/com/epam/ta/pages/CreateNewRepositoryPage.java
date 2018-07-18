@@ -38,7 +38,7 @@ public class CreateNewRepositoryPage extends AbstractPage
 	@FindBy(xpath = "//*[@id='new_repository']//button[@type='button']")
 	private WebElement ownerRepository;
 
-	@FindBy(xpath = "//dd[@class=\"error\"]")
+	@FindBy(xpath = "//dd[@class='error']")
 	private WebElement errorMessageRepoExist;
 
 

@@ -1,14 +1,13 @@
 package com.epam.ta.steps;
 
 import com.epam.ta.driver.DriverSingleton;
-//import com.epam.ta.pages.UserRepositoriesPage;
+import com.epam.ta.pages.CreateNewRepositoryPage;
+import com.epam.ta.pages.LoginPage;
+import com.epam.ta.pages.MainPage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 
-import com.epam.ta.pages.CreateNewRepositoryPage;
-import com.epam.ta.pages.LoginPage;
-import com.epam.ta.pages.MainPage;
 
 public class Steps
 {

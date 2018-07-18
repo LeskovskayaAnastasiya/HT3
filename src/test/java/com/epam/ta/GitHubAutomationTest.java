@@ -1,12 +1,12 @@
 package com.epam.ta;
 
-import com.epam.ta.utils.DataProviders;
-import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+		import com.epam.ta.utils.DataProviders;
+		import org.testng.Assert;
+		import org.testng.annotations.AfterMethod;
+		import org.testng.annotations.BeforeMethod;
+		import org.testng.annotations.Test;
 
-import com.epam.ta.steps.Steps;
+		import com.epam.ta.steps.Steps;
 
 public class GitHubAutomationTest
 {
@@ -23,7 +23,7 @@ public class GitHubAutomationTest
 		steps.initBrowser();
 	}
 
-	//test1
+
 	// Check error message when the user login with incorrect data
 	@Test(
 			dataProviderClass = DataProviders.class,
@@ -43,16 +43,14 @@ public class GitHubAutomationTest
 		Assert.assertTrue(steps.isLoggedIn(USERNAME));
 	}
 
-	//	test2
-	// check repo creation with correct repoName
+
+	// check repo creation with correct projectName.
 	@Test ( dataProviderClass = DataProviders.class,
 			dataProvider = "DataProviderForCreateRepo")
 	public void CanCreateProject(String wayToCreateRepo)
 	{
 		steps.loginGithub(USERNAME, PASSWORD);
 		Assert.assertFalse(steps.createNewRepository(steps.generateFullNameRepo(USERNAME), "auto-generated test repo", wayToCreateRepo));
-		//Assert.assertTrue(steps.currentRepositoryIsEmpty());
-		// do not use lots of asserts
 	}
 
 	//	test3

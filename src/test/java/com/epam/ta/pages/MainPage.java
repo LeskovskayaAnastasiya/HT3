@@ -19,7 +19,6 @@ public class MainPage extends AbstractPage
 	@FindBy(xpath = "//*[@id=\"js-pjax-container\"]/div[1]/div/div/a[2]")
 	private WebElement startProjectButton;
 
-
 	@FindBy(xpath = "//*[@id=\"dashboard\"]/div[1]/div/div[1]/h3/a")
 	private WebElement newRepoButton;
 
