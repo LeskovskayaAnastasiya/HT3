@@ -9,13 +9,19 @@ public class MainPage extends AbstractPage
 {
 	private final String BASE_URL = "https://github.com/";
 
-	//*[@id="user-links"]/li[2]/details/summary
+
 	@FindBy(xpath = "//*[@id=\"user-links\"]/li[2]/details/summary")
-//	@FindBy(xpath = "//*[@id=\"dashboard\"]/div[1]/div/div[1]/h3/a")
 	private WebElement buttonCreateNew;
 
 	@FindBy(xpath = "//a[contains(text(), 'New repository')]")
 	private WebElement linkNewRepository;
+
+	@FindBy(xpath = "//*[@id=\"js-pjax-container\"]/div[1]/div/div/a[2]")
+	private WebElement startProjectButton;
+
+
+	@FindBy(xpath = "//*[@id=\"dashboard\"]/div[1]/div/div[1]/h3/a")
+	private WebElement newRepoButton;
 
 	public MainPage(WebDriver driver)
 	{
@@ -28,6 +34,17 @@ public class MainPage extends AbstractPage
 		buttonCreateNew.click();
 		linkNewRepository.click();
 	}
+
+	public void clickOnStartProjectButton()
+	{
+		startProjectButton.click();
+	}
+
+	public void clickOnNewRepoButton()
+	{
+		newRepoButton.click();
+	}
+
 
 	@Override
 	public void openPage()

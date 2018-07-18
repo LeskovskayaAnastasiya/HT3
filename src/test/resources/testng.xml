@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="C:/Users/Anastasia/Documents/HT3/src/test/resources">
+        <classes>
+            <class name="com.epam.ta.GitHubAutomationTest">
+                <methods>
+                    <include name="loginGithubWithIncorrectData"/>
+                    <include name="oneCanLoginGithub"/>
+                    <include name="CanCreateProject"/>
+                    <include name="tryToCreateDublicateProject"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,12 +1,10 @@
 package com.epam.ta.steps;
 
-import java.util.concurrent.TimeUnit;
-
 import com.epam.ta.driver.DriverSingleton;
+//import com.epam.ta.pages.UserRepositoriesPage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
 import com.epam.ta.pages.CreateNewRepositoryPage;
 import com.epam.ta.pages.LoginPage;
@@ -21,7 +19,6 @@ public class Steps
 	public void initBrowser()
 	{
 		driver = DriverSingleton.getDriver();
-
 	}
 
 	public void closeDriver()
@@ -52,15 +49,28 @@ public class Steps
 		return errorMessage.equals(message);
 	}
 
+	public String generateFullNameRepo(String repositoryName){
+		CreateNewRepositoryPage createNewRepositoryPage = new CreateNewRepositoryPage(driver);
+		return createNewRepositoryPage.generateFullNameRepo(repositoryName);
+	}
 
-	public boolean createNewRepository(String repositoryName, String repositoryDescription)
+	public boolean createNewRepository(String repositoryName, String repositoryDescription, String wayToCreateRepo)
 	{
 		MainPage mainPage = new MainPage(driver);
-		mainPage.clickOnCreateNewRepositoryButton();
+		if ("checkNewRepositoryLink".equals(wayToCreateRepo)) {
+			mainPage.clickOnCreateNewRepositoryButton();
+
+		} else if ("checkNewRepositoryButton".equals(wayToCreateRepo)) {
+			mainPage.clickOnStartProjectButton();
+
+		} else if ("checkStartProjectButton".equals(wayToCreateRepo)) {
+			mainPage.clickOnNewRepoButton();
+		}
+
 		CreateNewRepositoryPage createNewRepositoryPage = new CreateNewRepositoryPage(driver);
-		String expectedRepoName = createNewRepositoryPage.createNewRepository(repositoryName, repositoryDescription);
-		return expectedRepoName.equals(createNewRepositoryPage.getCurrentRepositoryName());
-	}
+		return createNewRepositoryPage.createNewRepository(repositoryName,repositoryDescription);
+		}
+
 
 	public boolean currentRepositoryIsEmpty()
 	{
